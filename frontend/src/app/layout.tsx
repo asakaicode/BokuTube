@@ -1,21 +1,19 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "BokuTube - Top",
-  description: "BokuTube is a video sharing platform.",
-};
+  title: 'BokuTube - Top',
+  description: 'BokuTube is a video sharing platform.',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="ja">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
