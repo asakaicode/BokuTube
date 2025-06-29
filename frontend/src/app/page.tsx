@@ -5,5 +5,5 @@ export default function Home() {
         <h1>BokuTube</h1>
       </main>
     </div>
-  );
+  )
 }
