@@ -1,6 +1,6 @@
 import { ApolloServer } from "@apollo/server"
 import { startStandaloneServer } from "@apollo/server/standalone"
-import apolloConfig from "./schema"
+import apolloConfig from "~/schema"
 
 const PORT = 4000
 

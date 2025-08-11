@@ -1,5 +1,5 @@
-import books from "./queries/books";
-import typeDefs from "./typeDefs";
+import books from "~/schema/books/queries/books";
+import typeDefs from "~/schema/books/typeDefs";
 
 const resolvers = {
   Query: {

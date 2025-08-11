@@ -1,4 +1,4 @@
-import bookSchema from './books'
+import bookSchema from '~/schema/books'
 
 const typeDefs = [
   bookSchema.typeDefs

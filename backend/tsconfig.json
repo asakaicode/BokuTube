@@ -9,6 +9,10 @@
     "esModuleInterop": true,
     "types": ["node"],
     "forceConsistentCasingInFileNames": true,
-    "strict": true
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
   }
 }
