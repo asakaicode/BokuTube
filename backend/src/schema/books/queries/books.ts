@@ -1,4 +1,4 @@
-import { Book } from '~/models/book'
+import { Book } from '~/models/book.js'
 
 export default async function books(): Promise<Book[]> {
   // Simulate a database call

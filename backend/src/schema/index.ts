@@ -1,13 +1,10 @@
-import bookSchema from '~/schema/books'
+import bookSchema from '~/schema/books/index.js'
 
 const typeDefs = [bookSchema.typeDefs]
 
 const resolvers = {
   Query: {
     ...bookSchema.resolvers.Query,
-  },
-  Mutation: {
-    ...bookSchema.resolvers.Mutation,
   },
 }
 
