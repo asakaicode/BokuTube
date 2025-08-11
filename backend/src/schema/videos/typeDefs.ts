@@ -1,6 +1,4 @@
 const typeDefs = `
-  scalar DateTime
-
   type Video {
     id: ID!
     title: String!
