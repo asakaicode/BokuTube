@@ -1,11 +1,11 @@
-import books from "~/schema/books/queries/books";
-import typeDefs from "~/schema/books/typeDefs";
+import books from '~/schema/books/queries/books'
+import typeDefs from '~/schema/books/typeDefs'
 
 const resolvers = {
   Query: {
-    books
+    books,
   },
-  Mutation: {}
+  Mutation: {},
 }
 
 const schema = {

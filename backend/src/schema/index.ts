@@ -1,21 +1,19 @@
 import bookSchema from '~/schema/books'
 
-const typeDefs = [
-  bookSchema.typeDefs
-]
+const typeDefs = [bookSchema.typeDefs]
 
 const resolvers = {
   Query: {
-    ...bookSchema.resolvers.Query
+    ...bookSchema.resolvers.Query,
   },
   Mutation: {
-    ...bookSchema.resolvers.Mutation
-  }
+    ...bookSchema.resolvers.Mutation,
+  },
 }
 
 const apolloConfig = {
   typeDefs,
-  resolvers
+  resolvers,
 }
 
 export default apolloConfig
