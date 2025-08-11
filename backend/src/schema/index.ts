@@ -6,6 +6,9 @@ const resolvers = {
   Query: {
     ...videoSchema.resolvers.Query,
   },
+  Mutation: {
+    ...videoSchema.resolvers.Mutation,
+  },
 }
 
 const apolloConfig = {

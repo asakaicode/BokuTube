@@ -1,7 +1,7 @@
 import { GraphQLResolveInfo } from 'graphql'
 import { mockFetchVideo, Video } from '~/models/video.js'
 
-export interface VideoArgs {
+interface VideoArgs {
   id: string
 }
 
