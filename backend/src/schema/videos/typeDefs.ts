@@ -1,4 +1,6 @@
 const typeDefs = `
+  scalar DateTime
+
   type Video {
     id: ID!
     title: String!
@@ -6,7 +8,7 @@ const typeDefs = `
     durationSec: Int!
     playbackUrl: String!
     thumbnailUrl: String!
-    createdAt: Date!
+    createdAt: DateTime!
     visibility: String!
   }
 
