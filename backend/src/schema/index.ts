@@ -1,10 +1,13 @@
-import bookSchema from '~/schema/books/index.js'
+import videoSchema from '~/schema/videos/index.js'
 
-const typeDefs = [bookSchema.typeDefs]
+const typeDefs = [videoSchema.typeDefs]
 
 const resolvers = {
   Query: {
-    ...bookSchema.resolvers.Query,
+    ...videoSchema.resolvers.Query,
+  },
+  Mutation: {
+    ...videoSchema.resolvers.Mutation,
   },
 }
 
