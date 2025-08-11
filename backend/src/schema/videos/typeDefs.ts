@@ -24,7 +24,7 @@ const typeDefs = `
   }
 
   type Mutation {
-    createUploadUrl: (filename: String!, contentType: String!): PresignedPayload!
+    createUploadUrl(filename: String!, contentType: String!): PresignedPayload!
     finalizeUploadVideo(key: String!, title: String!): Video!
   }
 `
