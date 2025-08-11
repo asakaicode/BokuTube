@@ -1,6 +1,6 @@
-const typeDefs = `
-  scalar DateTime
+import { gql } from 'graphql-tag'
 
+const typeDefs = gql`
   type Video {
     id: ID!
     title: String!
