@@ -7,11 +7,6 @@ import {
   UseQueryResult,
 } from '@tanstack/react-query'
 
-export enum GRAPHQL_OPERATION {
-  QUERY = 'query',
-  MUTATION = 'mutation',
-}
-
 export const useGraphQLQuery = <T>(
   query: string,
   variables: Record<string, unknown>,
