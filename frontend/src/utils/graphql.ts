@@ -3,37 +3,34 @@ import {
   UseMutationOptions,
   UseMutationResult,
   useQuery,
-  useQueryClient,
   UseQueryResult,
 } from '@tanstack/react-query'
+import { DocumentNode } from 'graphql'
 
 export const useGraphQLQuery = <T>(
-  query: string,
+  query: DocumentNode,
   variables: Record<string, unknown>,
-): UseQueryResult<T> => {
-  return useQuery({
+): UseQueryResult<T> =>
+  useQuery({
     queryKey: [query, variables],
     queryFn: () => fetchWithGraphQL<T>(query, variables),
   })
-}
 
 export const useGraphQLMutation = <
   TData,
   TVariables extends Record<string, unknown>,
 >(
-  mutation: string,
+  mutation: DocumentNode,
   options?: Omit<UseMutationOptions<TData, Error, TVariables>, 'mutationFn'>,
-): UseMutationResult<TData, Error, TVariables> => {
-  const queryClient = useQueryClient()
-  return useMutation<TData, Error, TVariables>({
+): UseMutationResult<TData, Error, TVariables> =>
+  useMutation<TData, Error, TVariables>({
     mutationFn: (variables: TVariables) =>
       fetchWithGraphQL<TData>(mutation, variables),
     ...options,
   })
-}
 
 const fetchWithGraphQL = async <T>(
-  query: string,
+  query: DocumentNode,
   variables: Record<string, unknown>,
 ): Promise<T> => {
   const res = await fetch('/graphql', {
