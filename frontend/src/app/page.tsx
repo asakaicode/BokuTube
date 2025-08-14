@@ -1,9 +1,9 @@
+import { Typography } from '@mui/material'
+
 export default function Home() {
   return (
-    <div>
-      <main>
-        <h1>BokuTube</h1>
-      </main>
-    </div>
+    <>
+      <Typography variant="h1">BokuTube</Typography>
+    </>
   )
 }
