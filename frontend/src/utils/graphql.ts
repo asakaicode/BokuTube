@@ -33,7 +33,11 @@ const fetchWithGraphQL = async <T>(
   query: DocumentNode,
   variables: Record<string, unknown>,
 ): Promise<T> => {
-  const res = await fetch('/graphql', {
+  if (!process.env.GRAPHQL_ENDPOINT) {
+    throw new Error('GRAPHQL_ENDPOINT environment variable is not defined')
+  }
+
+  const res = await fetch(process.env.GRAPHQL_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query, variables }),
