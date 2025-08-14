@@ -10,6 +10,9 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": "always"
     },
+    "tailwindCSS.experimental.classRegex": [
+      "tailwindStyle\\s*=\\s*\"([^\"]*)\""
+    ],
     "workbench.colorCustomizations": {
       "activityBar.activeBackground": "#fa1b49",
       "activityBar.background": "#fa1b49",
