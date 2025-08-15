@@ -36,4 +36,29 @@ jobs:
                 \"username\": \"GitHub CI/CD Bot\",
                 \"avatar_url\": \"https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png\"
               }" \
-          $DISCORD_WEBHOOK_URL
+          jq -n \
+            --arg repo_name "$REPOSITORY_NAME" \
+            --arg pr_user "$PR_USER" \
+            --arg pr_title "$PR_TITLE" \
+            --arg pr_url "$PR_URL" \
+            --arg base_ref "${{ github.event.pull_request.base.ref }}" \
+            --arg author_name "${{ github.repository_owner }}" \
+            '{
+              content: null,
+              embeds: [
+                {
+                  title: $repo_name,
+                  description: ($pr_user + " の作成した Pull Request が " + $base_ref + " にマージされました 🎉 \n " + $pr_title),
+                  color: 5814783,
+                  url: $pr_url,
+                  author: {
+                    name: $author_name,
+                    url: ("https://github.com/" + $author_name),
+                    icon_url: ("https://github.com/" + $author_name + ".png")
+                  }
+                }
+              ],
+              username: "GitHub CI/CD Bot",
+              avatar_url: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+            }' \
+          | curl -X POST -H "Content-Type: application/json" -d @- $DISCORD_WEBHOOK_URL
