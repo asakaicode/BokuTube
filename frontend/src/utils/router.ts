@@ -28,7 +28,7 @@ export const useSafeRouter = () => {
 
       baseRouter.replace(path)
     },
-    [baseRouter],
+    [baseRouter, validatePath],
   )
 
   return {
