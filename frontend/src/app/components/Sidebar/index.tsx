@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { Home } from '@mui/icons-material'
 import { Typography } from '@mui/material'
