@@ -1,3 +1,5 @@
+"use client"
+
 import { Stack } from '@mui/material'
 
 const HStack: React.FC<{
