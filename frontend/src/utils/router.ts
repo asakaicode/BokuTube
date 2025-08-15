@@ -17,7 +17,7 @@ export const useSafeRouter = () => {
 
       baseRouter.push(path)
     },
-    [baseRouter],
+    [baseRouter, validatePath],
   )
 
   const replace = useCallback(
