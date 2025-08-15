@@ -4,17 +4,14 @@ import { useCallback } from 'react'
 export const useSafeRouter = () => {
   const baseRouter = useRouter()
 
-  const validatePath = useCallback(
-    (_path: string): boolean => {
-      // Implement your path validation logic here
-      return true
-    },
-    [baseRouter],
-  )
+  const validatePath = useCallback((): boolean => {
+    // Implement your path validation logic here
+    return true
+  }, [baseRouter])
 
   const push = useCallback(
     (path: string): void => {
-      if (!validatePath(path)) {
+      if (!validatePath()) {
         return
       }
 
@@ -25,7 +22,7 @@ export const useSafeRouter = () => {
 
   const replace = useCallback(
     (path: string): void => {
-      if (!validatePath(path)) {
+      if (!validatePath()) {
         return
       }
 
