@@ -6,7 +6,7 @@ const GridItem: React.FC<{
   tailwindStyle?: string
 }> = ({ size, children, tailwindStyle }) => {
   return (
-    <Grid item size={size} className={tailwindStyle}>
+    <Grid size={size} className={tailwindStyle}>
       {children}
     </Grid>
   )
