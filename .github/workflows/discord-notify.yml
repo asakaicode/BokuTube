@@ -17,31 +17,6 @@ jobs:
           PR_URL: ${{ github.event.pull_request.html_url }}
           PR_USER: ${{ github.event.pull_request.user.login }}
         run: |
-          curl -X POST -H "Content-Type: application/json" \
-          -d "{
-                \"content\": null,
-                \"embeds\": [
-                  {
-          REPOSITORY_NAME_JSON=$(jq -Rn --arg v "$REPOSITORY_NAME" '$v')
-          curl -X POST -H "Content-Type: application/json" \
-          -d "{
-                \"content\": null,
-                \"embeds\": [
-                  {
-                    \"title\": ${REPOSITORY_NAME_JSON},
-                    \"description\": \"${PR_USER} の作成した Pull Request が ${{ github.event.pull_request.base.ref }} にマージされました 🎉 \n ${PR_TITLE}\",
-                    \"color\": 5814783,
-                    \"url\": \"${PR_URL}\",
-                    \"author\": {
-                      \"name\": \"${{ github.repository_owner }}\",
-                      \"url\": \"https://github.com/${{ github.repository_owner }}\",
-                      \"icon_url\": \"https://github.com/${{ github.repository_owner }}.png\"
-                    }
-                  }
-                ],
-                \"username\": \"GitHub CI/CD Bot\",
-                \"avatar_url\": \"https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png\"
-              }" \
           jq -n \
             --arg repo_name "$REPOSITORY_NAME" \
             --arg pr_user "$PR_USER" \
