@@ -1,11 +1,5 @@
-"use client"
-
-import { Typography } from '@mui/material'
+'use client'
 
 export default function Home() {
-  return (
-    <>
-      <Typography variant="h1">BokuTube</Typography>
-    </>
-  )
+  return <></>
 }

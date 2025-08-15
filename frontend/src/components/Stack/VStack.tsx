@@ -1,13 +1,14 @@
-"use client"
+'use client'
 
 import { Stack } from '@mui/material'
 
 const VStack: React.FC<{
   children: React.ReactNode
   spacing?: number
-}> = ({ children, spacing }) => {
+  tailwindStyle?: string
+}> = ({ children, spacing, tailwindStyle }) => {
   return (
-    <Stack direction="column" spacing={spacing ?? 2}>
+    <Stack direction="column" spacing={spacing ?? 2} className={tailwindStyle}>
       {children}
     </Stack>
   )
