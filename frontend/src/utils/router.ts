@@ -7,7 +7,7 @@ export const useSafeRouter = () => {
   const validatePath = useCallback((): boolean => {
     // Implement your path validation logic here
     return true
-  }, [baseRouter])
+  }, [])
 
   const push = useCallback(
     (path: string): void => {
