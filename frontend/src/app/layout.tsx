@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import VStack from '~/components/Stack/VStack'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import './globals.css'
@@ -16,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <header>
-          <Header />
-          <Sidebar />
+        <header className="fixed top-0 left-0 z-10">
+          <VStack>
+            <Header />
+            <Sidebar />
+          </VStack>
         </header>
         <main>{children}</main>
       </body>
