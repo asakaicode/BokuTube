@@ -1,1 +1,9 @@
 @import 'tailwindcss';
+/* Main content scaling via CSS variable */
+:root {
+  --main-scale: 1;
+}
+.scaledMain {
+  transform-origin: top left;
+  transform: scale(var(--main-scale));
+}
